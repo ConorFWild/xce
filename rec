@@ -83,7 +83,8 @@ From: ubuntu
     apt-get install --fix-missing -y libtool
 
     wget "https://wordpress.org/latest.zip"
-    wget "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz"
+    curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
+    # wget "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz"
     tar xzvf guile-1.8.8.tar.gz
     cd guile-1.8.8
      ./configure --disable-dependency-tracking --enable-error-on-warning=no
