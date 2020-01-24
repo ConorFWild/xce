@@ -83,7 +83,6 @@ From: ubuntu
     apt-get install --fix-missing -y libreadline-dev
     apt-get install --fix-missing -y libtool
 
-    wget "https://wordpress.org/latest.zip"
     curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
     # wget "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz"
     tar xzvf guile-1.8.8.tar.gz
