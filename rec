@@ -1,0 +1,92 @@
+Bootstrap: docker
+From: ubuntu
+
+# Bootstrap: localimage
+# From: /singularity/pdb-redo_20181016.simg
+
+%runscript
+    cd /
+ 
+    echo "ServerAliveInterval 15" >> ~/.ssh/config
+    echo "ServerAliveCountMax 3" >> ~/.ssh/config
+ 
+    sshfs -o reconnect zoh22914@nx.diamond.ac.uk:/dls /dls
+    /dls/science/groups/i04-1/software/XChem/xce
+    # ./XChemExplorer/XChemExplorer_local.sh
+    
+    # fusermount -u /dls
+
+%files
+    /singularity/ccp4-7.0.077-linux64.tar.gz /ccp4-7.0.tar.gz
+    /singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
+    
+
+%environment
+    VARIABLE=MEATBALLVALUE
+    export VARIABLE
+
+%labels
+   AUTHOR conor.wild@sky.com
+
+%post
+    chmod 777 /
+    apt-get update -y 
+    apt-get upgrade -y 
+    apt-get dist-upgrade -y 
+    apt-get install screen -y
+
+    apt-get install -y software-properties-common
+
+    apt-get update 
+    apt-get -y install git
+    apt-get -y install wget
+    apt-get -y install python
+
+    add-apt-repository ppa:apt-fast/stable
+    apt-get update
+    apt-get -y install apt-fast
+
+    apt-fast install --fix-missing -y libglib2.0-data
+    apt-get install --fix-missing -y libglib2.0-0
+    apt-get install --fix-missing -y libxml2
+    apt-get install --fix-missing -y sgml-base
+    apt-get install --fix-missing -y shared-mime-info
+    apt-get install --fix-missing -y xml-core
+    apt-get install --fix-missing -y libfuse2
+    apt-get install --fix-missing -y fuse
+    # apt-get install --fix-missing -y libicu55
+    apt-get install --fix-missing -y xdg-user-dirs
+    apt-get install --fix-missing -y sshfs
+
+    apt-get install --fix-missing -y environment-modules
+    
+    apt-get install --fix-missing -y libfontconfig
+
+    apt-get install --fix-missing -y libxrender1
+    apt-get install --fix-missing -y libxcursor1
+    apt-get install --fix-missing -y libxcomposite1
+    apt-get install --fix-missing -y libx11-dev
+    apt-get install --fix-missing -y libxdamage1
+    apt-get install --fix-missing -y libgfortran3
+    apt-get install --fix-missing -y libgomp1
+
+
+    # Download and install XCE
+    cd /
+    git clone https://github.com/xchem/XChemExplorer.git
+    # cd XChemExplorer/
+    # ./test_build.sh
+
+    # Add new version of XChemExplorer
+    cp /XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+
+    # Set up fuse mounted drive
+    mkdir /dls
+    chmod 777 /dls
+
+    # EDIT SSH
+
+    # Setup ccp4
+    tar -xzvf /ccp4-7.0.tar.gz
+    # /ccp4-7.0/start
+
