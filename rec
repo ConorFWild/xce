@@ -69,7 +69,26 @@ From: ubuntu
     apt-get install --fix-missing -y libxdamage1
     apt-get install --fix-missing -y libgfortran3
     apt-get install --fix-missing -y libgomp1
+    apt-get install --fix-missing -y xauth
+    apt-get install --fix-missing -y x11-apps
+    apt-get install --fix-missing -y autoconf
+    apt-get install --fix-missing -y automake
+    apt-get install --fix-missing -y debhelper
+    apt-get install --fix-missing -y dh-autoreconf
+    apt-get install --fix-missing -y flex
+    apt-get install --fix-missing -y libgmp-dev
+    apt-get install --fix-missing -y libltdl-dev
+    apt-get install --fix-missing -y libncurses5-dev
+    apt-get install --fix-missing -y libreadline-dev
+    apt-get install --fix-missing -y libtool
 
+    wget https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz
+    tar xzvf guile-1.8.8.tar.gz
+    cd guile-1.8.8
+     ./configure --disable-dependency-tracking --enable-error-on-warning=no
+    make
+    make install
+    apt-get install --fix-missing -y libxrandr2
 
     # Download and install XCE
     cd /
