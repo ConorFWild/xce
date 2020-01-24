@@ -82,7 +82,7 @@ From: ubuntu
     apt-get install --fix-missing -y libreadline-dev
     apt-get install --fix-missing -y libtool
 
-    wget https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz
+    wget 'https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz'
     tar xzvf guile-1.8.8.tar.gz
     cd guile-1.8.8
      ./configure --disable-dependency-tracking --enable-error-on-warning=no
