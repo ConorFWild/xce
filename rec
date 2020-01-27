@@ -114,6 +114,8 @@ From: ubuntu
     # EDIT SSH
 
     # Setup ccp4
-    tar -xjf /ccp4-7.0-linux64-latest.tar.bz2
+    tar -xjf /ccp4-7.0-linux64-latest.tar.bz2 -c
     # /ccp4-7.0/start
+    mv -r ccp4-7.0-linux64-2020-01-26-1720 ccp4
+    ./ccp4/BINARY.setup
 
