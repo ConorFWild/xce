@@ -103,7 +103,7 @@ From: ubuntu
     # Add new version of XChemExplorer
     cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
 
-    wget -o /ccp4-7.0.tar.gz http://devtools.fg.oisin.rc-harwell.ac.uk/nightly/7.0/ccp4-7.0-linux64-latest.tar.bz2
+    wget -o /ccp4-7.0.tar.bz2 http://devtools.fg.oisin.rc-harwell.ac.uk/nightly/7.0/ccp4-7.0-linux64-latest.tar.bz2
 
 
     # Set up fuse mounted drive
@@ -113,6 +113,6 @@ From: ubuntu
     # EDIT SSH
 
     # Setup ccp4
-    tar -xzvf /ccp4-7.0.tar.gz
+    tar -xjf /ccp4-7.0.tar.gz
     # /ccp4-7.0/start
 
