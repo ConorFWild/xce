@@ -17,8 +17,8 @@ From: ubuntu
     # fusermount -u /dls
 
 %files
-    /singularity/ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
-    /singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
+    ‪C:\singularity\ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
+    ‪C:\singularity\resources\XChemExplorer_local.sh /XChemExplorer_local.sh
     
 
 %environment
