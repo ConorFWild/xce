@@ -17,8 +17,8 @@ From: ubuntu
     # fusermount -u /dls
 
 %files
-    $HOME/‪singularity/ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
-    ‪$HOME/singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
+    #$HOME/‪singularity/ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
+    #‪$HOME/singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
     
 
 %environment
@@ -84,7 +84,7 @@ From: ubuntu
     apt-get install --fix-missing -y libtool
 
     curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
-    # wget "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz"
+
     tar xzvf guile-1.8.8.tar.gz
     cd guile-1.8.8
     ./configure --disable-dependency-tracking --enable-error-on-warning=no
@@ -98,8 +98,13 @@ From: ubuntu
     # cd XChemExplorer/
     # ./test_build.sh
 
+    git clone https://github.com/ConorFWild/xce.git
+
     # Add new version of XChemExplorer
-    cp /XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+    cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+
+    wget -o /ccp4-7.0.tar.gz http://devtools.fg.oisin.rc-harwell.ac.uk/nightly/7.0/ccp4-7.0-linux64-latest.tar.bz2
+
 
     # Set up fuse mounted drive
     mkdir /dls
