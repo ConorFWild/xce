@@ -1,1 +1,1 @@
-xauth add $cookie
+xauth add $COOKIE

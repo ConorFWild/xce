@@ -1,1 +1,1 @@
-cookie="$(xauth list)"
+export COOKIE="$(xauth list)"
