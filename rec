@@ -17,8 +17,8 @@ From: ubuntu
     # fusermount -u /dls
 
 %files
-    /singularity/ccp4-7.0.077-linux64.tar.gz /ccp4-7.0.tar.gz
-    /singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
+    #$HOME/‪singularity/ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
+    #‪$HOME/singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
     
 
 %environment
@@ -40,6 +40,7 @@ From: ubuntu
     apt-get update 
     apt-get -y install git
     apt-get -y install wget
+    apt-get -y install curl
     apt-get -y install python
 
     add-apt-repository ppa:apt-fast/stable
@@ -69,7 +70,27 @@ From: ubuntu
     apt-get install --fix-missing -y libxdamage1
     apt-get install --fix-missing -y libgfortran3
     apt-get install --fix-missing -y libgomp1
+    apt-get install --fix-missing -y xauth
+    apt-get install --fix-missing -y x11-apps
+    apt-get install --fix-missing -y autoconf
+    apt-get install --fix-missing -y automake
+    apt-get install --fix-missing -y debhelper
+    apt-get install --fix-missing -y dh-autoreconf
+    apt-get install --fix-missing -y flex
+    apt-get install --fix-missing -y libgmp-dev
+    apt-get install --fix-missing -y libltdl-dev
+    apt-get install --fix-missing -y libncurses5-dev
+    apt-get install --fix-missing -y libreadline-dev
+    apt-get install --fix-missing -y libtool
 
+    curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
+
+    tar xzvf guile-1.8.8.tar.gz
+    cd guile-1.8.8
+    ./configure --disable-dependency-tracking --enable-error-on-warning=no
+    make
+    make install
+    apt-get install --fix-missing -y libxrandr2
 
     # Download and install XCE
     cd /
@@ -77,8 +98,14 @@ From: ubuntu
     # cd XChemExplorer/
     # ./test_build.sh
 
+    git clone https://github.com/ConorFWild/xce.git
+
     # Add new version of XChemExplorer
-    cp /XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+    cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+
+    cd /
+    wget http://devtools.fg.oisin.rc-harwell.ac.uk/nightly/7.0/ccp4-7.0-linux64-latest.tar.bz2
+
 
     # Set up fuse mounted drive
     mkdir /dls
@@ -87,6 +114,6 @@ From: ubuntu
     # EDIT SSH
 
     # Setup ccp4
-    tar -xzvf /ccp4-7.0.tar.gz
+    tar -xjf /ccp4-7.0-linux64-latest.tar.bz2
     # /ccp4-7.0/start
 
