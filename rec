@@ -113,6 +113,6 @@ From: ubuntu
     # EDIT SSH
 
     # Setup ccp4
-    tar -xjf /ccp4-7.0.tar.gz
+    tar -xjf /ccp4-7.0.tar.bz2
     # /ccp4-7.0/start
 
