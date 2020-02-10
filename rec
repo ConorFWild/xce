@@ -1,26 +1,6 @@
 Bootstrap: docker
 From: ubuntu
 
-# Bootstrap: localimage
-# From: /singularity/pdb-redo_20181016.simg
-
-%runscript
-    cd /
- 
-    echo "ServerAliveInterval 15" >> ~/.ssh/config
-    echo "ServerAliveCountMax 3" >> ~/.ssh/config
- 
-    sshfs -o reconnect zoh22914@nx.diamond.ac.uk:/dls /dls
-    /dls/science/groups/i04-1/software/XChem/xce
-    # ./XChemExplorer/XChemExplorer_local.sh
-    
-    # fusermount -u /dls
-
-%files
-    #$HOME/‪singularity/ccp4-7.0.078-linux64.tar.gz /ccp4-7.0.tar.gz
-    #‪$HOME/singularity/resources/XChemExplorer_local.sh /XChemExplorer_local.sh
-    
-
 %environment
     VARIABLE=MEATBALLVALUE
     export VARIABLE
@@ -115,6 +95,6 @@ From: ubuntu
 
     # Setup ccp4
     tar -xjf /ccp4-7.0-linux-x86_64.tar.bz2
-    mv ccp4-7.0-linux-x86_64 ccp4
+    mv ccp4-7.0 ccp4
     ./ccp4/BINARY.setup --run-from-script
 
