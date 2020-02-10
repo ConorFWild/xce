@@ -104,7 +104,7 @@ From: ubuntu
     cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
 
     cd /
-    wget http://devtools.fg.oisin.rc-harwell.ac.uk/nightly/7.0/ccp4-7.0-linux64-latest.tar.bz2
+    wget ftp://ftp.ccp4.ac.uk/ccp4/7.0/ccp4-7.0-linux-x86_64.tar.bz2
 
 
     # Set up fuse mounted drive
