@@ -62,6 +62,7 @@ From: ubuntu
     apt-get install --fix-missing -y libncurses5-dev
     apt-get install --fix-missing -y libreadline-dev
     apt-get install --fix-missing -y libtool
+    apt-get install --fix-missing -y libglu1-mesa
 
     curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
 
