@@ -91,7 +91,7 @@ From: ubuntu
 
 
     # Set up fuse mounted drive
-    mkdir /dls
+    mkdir /dls || cd /
     chmod 777 /dls
 
     # EDIT SSH
