@@ -97,6 +97,6 @@ From: ubuntu
     # Setup ccp4
     tar -xjf /ccp4-7.0-linux-x86_64.tar.bz2
     mv ccp4-7.0 ccp4
-    ./ccp4/BINARY.setup 
-    source ccp4/bin/ccp4.setup-sh
+    #./ccp4/BINARY.setup ##Doesn't work with or without script option
+    #source ccp4/bin/ccp4.setup-sh
 
