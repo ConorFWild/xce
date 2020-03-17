@@ -75,11 +75,13 @@ From: ubuntu
 
     # Download and install XCE
     cd /
-    git clone https://github.com/xchem/XChemExplorer.git
+    # runs clone, unless already exists
+    git clone https://github.com/xchem/XChemExplorer.git || cd XChemExplorer/ ; git pull origin master
     # cd XChemExplorer/
     # ./test_build.sh
-
-    git clone https://github.com/ConorFWild/xce.git
+    
+    # runs clone, unless already exists
+    git clone https://github.com/ConorFWild/xce.git || cd xce; git pull origin master
 
     # Add new version of XChemExplorer
     cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
