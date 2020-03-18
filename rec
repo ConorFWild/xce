@@ -76,7 +76,7 @@ From: ubuntu
     # Download and install XCE
     cd /
     # runs clone, unless already exists
-    git clone https://github.com/xchem/XChemExplorer.git || cd XChemExplorer/ ; git pull origin master
+    git clone https://github.com/xchem/XChemExplorer.git || cd XChemExplorer/ && git pull origin master
     # cd XChemExplorer/
     # ./test_build.sh
     
