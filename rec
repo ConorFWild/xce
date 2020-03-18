@@ -84,8 +84,8 @@ From: ubuntu
     git clone https://github.com/ConorFWild/xce.git || cd xce && git pull origin master
 
     # Add new version of XChemExplorer
-    cd /
-    cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
+    # cd /
+    # cp /xce/resources/XChemExplorer_local.sh /XChemExplorer/XChemExplorer_local.sh
 
     # Set up fuse mounted drive
     mkdir /dls || cd /
