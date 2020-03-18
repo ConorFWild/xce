@@ -102,7 +102,7 @@ From: ubuntu
     dir = /ccp4
     
     if ! [ -d "$dir" ]; then
-	    tar -xvf ccp4-7.0-linux-x86_64.tar.bz2
+        tar -xvf ccp4-7.0-linux-x86_64.tar.bz2
         mv ccp4-7.0 ccp4
     fi
     
