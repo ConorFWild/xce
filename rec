@@ -63,7 +63,9 @@ From: ubuntu
     apt-get install --fix-missing -y libreadline-dev
     apt-get install --fix-missing -y libtool
     apt-get install --fix-missing -y libglu1-mesa
-
+    apt-get install --fix-missing -y libxi6
+    apt-get install --fix-missing -y libxinerama1
+    
     curl "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz" > guile-1.8.8.tar.gz
 
     tar xzvf guile-1.8.8.tar.gz
