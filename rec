@@ -48,7 +48,10 @@ From: ubuntu
     apt-get install --fix-missing -y libxcomposite1
     apt-get install --fix-missing -y libx11-dev
     apt-get install --fix-missing -y libxdamage1
-    apt-get install --fix-missing -y libgfortran3
+    
+    # Not needed for guile/ coot, causing issues
+    # apt-get install --fix-missing -y libgfortran3
+    
     apt-get install --fix-missing -y libgomp1
     apt-get install --fix-missing -y xauth
     apt-get install --fix-missing -y x11-apps
