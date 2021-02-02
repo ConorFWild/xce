@@ -15,7 +15,7 @@ Open the contianer in sandbox mode
 
 Mount the diamond file system
 	sshfs -o reconnect {your diamond fedid}@nx.diamond.ac.uk:/dls /dls
-	e.g.sshfs -o reconnect zoh22914@nx.diamond.ac.uk:/dls /dls
+	e.g.sshfs -o reconnect {your diamond fedid}@nx.diamond.ac.uk:/dls /dls
 	And enter your password
 
 Change directory to your visit
