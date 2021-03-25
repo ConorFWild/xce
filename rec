@@ -101,7 +101,7 @@ From: ubuntu
     FILE=/ccp4-7.0-linux-x86_64.tar.bz2
     
     if [ ! -f "$FILE" ]; then
-        wget http://series-71.fg.oisin.rc-harwell.ac.uk/downloads/packages_others/ccp4-7.1.002-AMD64.tar.gz
+        wget http://series-71.fg.oisin.rc-harwell.ac.uk/downloads/packages_others/ccp4-7.1.012-AMD64.tar.gz
     fi
        
     tar -xvf ccp4-7.1.002-AMD64.tar.gz
